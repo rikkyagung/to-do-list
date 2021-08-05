@@ -6,30 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>To do list</title>
 </head>
 <body>
     
     <div class="container">
         <h1>To Do List</h1>
-        <input type="text">
-        <button class="tambah">Add</button>
         <ul></ul>
+        <button id="modal_trigger"><i class="fas fa-plus fa-lg"></i></button>
+
+        <div class="modal">
+            <button id="close"><i class="fas fa-times"></i></button>
+            <h2>Add Task</h2>
+            <input type="text" placeholder="Type your list" autocomplete="off">
+            <button id="add">Add</button>
+        </div>
     </div>
 
     <script>
 
+        const modalTrigger = document.getElementById('modal_trigger');
+        const tutup = document.getElementById('close');
+        const modal = document.querySelector('.modal');
+        const tambah = document.getElementById('add');
         const input = document.querySelector('input');
-        const tambah = document.querySelector('.tambah');
         const hasil = document.querySelector('ul');
+
+        modalTrigger.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+
+        tutup.addEventListener('click', function (){
+            modal.style.display = 'none';
+        });
 
         tambah.addEventListener('click', function (e) {
             // Jika input kosong
             if (input.value === '') {
-                alert('Harap ketikkan sesuatu!');
+                alert('Please type something!');
 
             // Ketika input terisi sesuatu
             } else {
@@ -46,11 +63,36 @@
                 hapus.appendChild(text);
                 list.appendChild(hapus);
 
+                // Hapus Task
                 hapus.addEventListener('click', function (e) {
                     e.target.parentElement.parentElement.remove();
                 });
             };
         });
+
+        // modalTrigger.addEventListener('click', function (e) {
+        //     // Create Modal
+        //     const modal = document.createElement('div');
+        //     modal.className = 'modal';
+        //     // Create Input
+        //     const input = document.createElement('input');
+        //     input.type = 'text';
+        //     // Create Button Add
+        //     const btn = document.createElement('button');
+        //     const text = document.createTextNode('add');
+        //     btn.append(text);
+
+        //     modal.append(input);
+        //     modal.append(btn);
+        //     container.appendChild(modal);
+
+        //     btn.addEventListener('click', function (e) {
+        //         const li = document.createElement('li');
+        //         li.innerText = input.value;
+        //         hasil.append(li);
+        //         input.value = '';
+        //     })
+        // })
 
     </script>
 
