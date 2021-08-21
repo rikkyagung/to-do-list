@@ -14,13 +14,15 @@
 <body>
     
     <div class="container">
-        <h1>To Do List</h1>
-        <ul></ul>
-        <button id="modal_trigger"><i class="fas fa-plus fa-lg"></i></button>
+        <div class="box">
+            <h1>To Do List</h1>
+            <ul></ul>
+            <button id="modal_trigger"><i class="fas fa-plus fa-lg"></i></button>
+        </div>
 
         <div class="modal">
             <button id="close"><i class="fas fa-times"></i></button>
-            <h2>Add Task</h2>
+            <h2>Add List</h2>
             <input type="text" placeholder="Type your list" autocomplete="off">
             <button id="add">Add</button>
         </div>
@@ -36,7 +38,9 @@
         const hasil = document.querySelector('ul');
 
         modalTrigger.addEventListener('click', function () {
-            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.style.display = 'block';
+            }, 100);
         });
 
         tutup.addEventListener('click', function (){
@@ -57,42 +61,77 @@
                 input.value = '';
 
                 // Membuat button untuk menghapus list
-                const hapus = document.createElement('button');
                 const text = document.createElement('i');
                 text.className = 'fas fa-times';
-                hapus.appendChild(text);
-                list.appendChild(hapus);
+                list.appendChild(text);
 
-                // Hapus Task
-                hapus.addEventListener('click', function (e) {
-                    e.target.parentElement.parentElement.remove();
+                // Hapus List
+                text.addEventListener('click', function (e) {
+                    console.log(e.target.parentElement);
+                    e.target.parentElement.remove();
                 });
             };
         });
 
+        
+        // Method 2
+        // If u want use this method, make sure you have to comment or delete modal in html. And dont forget to comment or delete 'display none' modal in style.css
+
+        // const container = document.querySelector('.container');
+
         // modalTrigger.addEventListener('click', function (e) {
         //     // Create Modal
-        //     const modal = document.createElement('div');
-        //     modal.className = 'modal';
+        //     const modals = document.createElement('div');
+        //     modals.className = 'modal';
+        //     // Create Close Button
+        //     const close = document.createElement('button');
+        //     close.id = 'close';
+        //     const icon = document.createElement('i');
+        //     icon.className = 'fas fa-times';
+        //     close.append(icon);
+        //     // Create Header
+        //     const header = document.createElement('h2');
+        //     const textHeader = document.createTextNode('Add List');
+        //     header.append(textHeader);
         //     // Create Input
         //     const input = document.createElement('input');
         //     input.type = 'text';
+        //     input.placeholder = 'Type your list';
         //     // Create Button Add
         //     const btn = document.createElement('button');
-        //     const text = document.createTextNode('add');
+        //     const text = document.createTextNode('Add');
+        //     btn.id = 'add';
         //     btn.append(text);
 
-        //     modal.append(input);
-        //     modal.append(btn);
-        //     container.appendChild(modal);
+        //     modals.append(close);
+        //     modals.append(header);
+        //     modals.append(input);
+        //     modals.append(btn);
+        //     container.appendChild(modals);
 
-        //     btn.addEventListener('click', function (e) {
-        //         const li = document.createElement('li');
-        //         li.innerText = input.value;
-        //         hasil.append(li);
-        //         input.value = '';
-        //     })
-        // })
+        //     btn.addEventListener('click', function () {
+        //         if (input.value === '') {
+        //             alert('Please type something!');
+        //         } else {
+        //             const li = document.createElement('li');
+        //             li.innerText = input.value;
+        //             hasil.append(li);
+    
+        //             const iconLi = document.createElement('i');
+        //             iconLi.className = 'fas fa-times';
+        //             li.append(iconLi);
+        //             input.value = '';
+
+        //             iconLi.addEventListener('click', function (e) {
+        //                 e.target.parentElement.remove();
+        //             });
+        //         };
+        //     });
+
+        //     close.addEventListener('click', function () {
+        //         modals.style.display = 'none';
+        //     });
+        // });
 
     </script>
 

@@ -7,20 +7,28 @@
 body {
   background-color: #e2e2e2;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: 35rem;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 }
 
 .container {
-  background-color: #f8f8f8;
-  width: 35rem;
-  margin: 2rem auto;
-  padding: 15px 18px 30px;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  padding: 2rem;
+  transition: all 0.5s ease;
 }
 
 .container h1 {
   text-align: center;
   margin-bottom: 2rem;
+  letter-spacing: .675px;
 }
 
 .container #modal_trigger {
@@ -31,14 +39,14 @@ body {
   border-radius: 50%;
   color: #f8f8f8;
   background-color: #6633df;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
 .container #modal_trigger:hover {
   background-color: #5520cf;
   transform: rotate(180deg);
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 li {
@@ -51,7 +59,7 @@ li {
   background-color: #eee;
 }
 
-li button {
+li i {
   position: absolute;
   right: .5rem;
   border: none;
@@ -63,15 +71,18 @@ li button {
 
 .modal {
   display: none;
-  position: absolute;
+  position: relative;
+  border-radius: 3px;
+  margin: auto;
   z-index: 10;
   text-align: center;
   width: 25rem;
   padding: 15px;
-  top: 5rem;
-  left: 15%;
+  top: -3rem;
+  transition: all 0.5s ease;
   background-color: #f8f8f8;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  transition: all 0.5s ease;
 }
 
 .modal #close {
@@ -85,7 +96,7 @@ li button {
   padding: .5rem .7rem;
   color: #6633df;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .modal #close:hover {
@@ -95,6 +106,7 @@ li button {
 
 .modal h2 {
   margin-bottom: 2rem;
+  letter-spacing: .675px;
 }
 
 .modal input {
@@ -107,28 +119,49 @@ li button {
   border: none;
   background-color: transparent;
   border-bottom: 2px solid #eee;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .modal input:focus {
   outline: none;
   border-bottom: 2px solid #6633df;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .modal #add {
   font-family: "Poppins", sans-serif;
   border: none;
+  border-radius: 3px;
   background-color: #6633df;
   color: #f8f8f8;
   padding: .4rem .6rem;
   margin-left: .3rem;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .modal #add:hover {
   background-color: #5520cf;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  .box {
+    width: 100%;
+  }
+  .modal {
+    width: 85%;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .modal #add {
+    margin-top: .5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

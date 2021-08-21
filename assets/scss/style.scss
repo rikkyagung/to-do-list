@@ -1,17 +1,24 @@
 @import './reset';
 @import './variables';
 
-.container {
-    background-color: $secondary-color;
-    width: 35rem;
-    margin: 2rem auto;
-    padding: 15px 18px 30px;
+.box {
     position: relative;
+    width: 35rem;
+    background-color: $secondary-color;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 1rem 1.2rem 1.8rem;
     box-shadow: rgba(0, 0, 0, .2) 0px 20px 30px;
+}
+
+.container {
+    padding: 2rem;
+    transition: $animation;
 
     h1 {
         text-align: center;
         margin-bottom: 2rem;
+        letter-spacing: .675px;
     }
     
     #modal_trigger {
@@ -42,7 +49,7 @@ li {
     align-items: center;
     background-color: $tersier-color;
 
-    button {
+    i {
         position: absolute;
         right: .5rem;
         border: none;
@@ -55,15 +62,18 @@ li {
 
 .modal {
     display: none;
-    position: absolute;
+    position: relative;
+    border-radius: 3px;
+    margin: auto;
     z-index: 10;
     text-align: center;
     width: 25rem;
     padding: 15px;
-    top: 5rem;
-    left: 15%;
+    top: -3rem;
+    transition: $animation;
     background-color: $secondary-color;
     box-shadow: rgba(0, 0, 0, .2) 0px 20px 30px;
+    transition: $animation;
 
     #close {
         position: absolute;
@@ -87,6 +97,7 @@ li {
 
     h2 {
         margin-bottom: 2rem;
+        letter-spacing: .675px;
     }
 
     input {
@@ -111,6 +122,7 @@ li {
     #add {
         font-family: $font-family;
         border: none;
+        border-radius: 3px;
         background-color: $primary-color;
         color: $secondary-color;
         padding: .4rem .6rem;
@@ -122,5 +134,27 @@ li {
             background-color: $primary-hover;
             transition: $animation;
         }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .modal {
+        width: 85%;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .modal #add {
+        margin-top: .5rem;
     }
 }
