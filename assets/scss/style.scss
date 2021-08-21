@@ -12,18 +12,42 @@
 }
 
 .container {
-    padding: 2rem;
+    padding: 2rem 2rem 3rem;
     transition: $animation;
 
     h1 {
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
         letter-spacing: .675px;
     }
+}
+
+li {
+    position: relative;
+    padding: .7rem 1.5rem .7rem .7rem;
+    margin: .7rem 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background-color: $tersier-color;
     
+    i {
+        position: absolute;
+        right: .5rem;
+        border: none;
+        padding: .2rem;
+        background-color: transparent;
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+
     #modal_trigger {
         position: absolute;
-        left: 45%;
         padding: 1.4rem 1.38rem;
         border: none;
         border-radius: 50%;
@@ -37,26 +61,6 @@
             transform: rotate(180deg);
             transition: $animation;
         }
-    }
-}
-
-li {
-    position: relative;
-    padding: .7rem 1.5rem .7rem .7rem;
-    margin: .7rem 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    background-color: $tersier-color;
-
-    i {
-        position: absolute;
-        right: .5rem;
-        border: none;
-        padding: .2rem;
-        background-color: transparent;
-        color: $primary-color;
-        cursor: pointer;
     }
 }
 
@@ -102,7 +106,7 @@ li {
 
     input {
         font-family: $font-family;
-        padding: .3rem;
+        padding: .5rem;
         margin-bottom: 7px;
         font-size: .9rem;
         letter-spacing: .675px;
@@ -121,11 +125,12 @@ li {
 
     #add {
         font-family: $font-family;
+        font-size: .9rem;
         border: none;
         border-radius: 3px;
         background-color: $primary-color;
         color: $secondary-color;
-        padding: .4rem .6rem;
+        padding: .6rem 1.1rem;
         margin-left: .3rem;
         cursor: pointer;
         transition: $animation;
@@ -140,7 +145,7 @@ li {
 @media screen and (max-width: 640px) {
     .container {
         width: 100%;
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 3rem;
     }
 
     .box {
@@ -149,12 +154,16 @@ li {
 
     .modal {
         width: 85%;
-        margin-top: 1rem;
+        margin-top: 1.2rem;
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
     .modal #add {
         margin-top: .5rem;
+    }
+
+    .modal input {
+        width: 100%;
     }
 }

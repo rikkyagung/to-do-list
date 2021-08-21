@@ -21,32 +21,14 @@ body {
 }
 
 .container {
-  padding: 2rem;
-  transition: all 0.5s ease;
+  padding: 2rem 2rem 3rem;
+  transition: all 0.4s ease-in-out;
 }
 
 .container h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
   letter-spacing: .675px;
-}
-
-.container #modal_trigger {
-  position: absolute;
-  left: 45%;
-  padding: 1.4rem 1.38rem;
-  border: none;
-  border-radius: 50%;
-  color: #f8f8f8;
-  background-color: #6633df;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-
-.container #modal_trigger:hover {
-  background-color: #5520cf;
-  transform: rotate(180deg);
-  transition: all 0.5s ease;
 }
 
 li {
@@ -65,8 +47,30 @@ li i {
   border: none;
   padding: .2rem;
   background-color: transparent;
-  color: #6633df;
+  color: #5f42e0;
   cursor: pointer;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap #modal_trigger {
+  position: absolute;
+  padding: 1.4rem 1.38rem;
+  border: none;
+  border-radius: 50%;
+  color: #f8f8f8;
+  background-color: #5f42e0;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.wrap #modal_trigger:hover {
+  background-color: #562abe;
+  transform: rotate(180deg);
+  transition: all 0.4s ease-in-out;
 }
 
 .modal {
@@ -79,10 +83,10 @@ li i {
   width: 25rem;
   padding: 15px;
   top: -3rem;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out;
   background-color: #f8f8f8;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out;
 }
 
 .modal #close {
@@ -92,15 +96,15 @@ li i {
   border: none;
   border-radius: 50%;
   background-color: #f8f8f8;
-  border: 2px solid #6633df;
+  border: 2px solid #5f42e0;
   padding: .5rem .7rem;
-  color: #6633df;
+  color: #5f42e0;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out;
 }
 
 .modal #close:hover {
-  background-color: #6633df;
+  background-color: #5f42e0;
   color: #f8f8f8;
 }
 
@@ -111,7 +115,7 @@ li i {
 
 .modal input {
   font-family: "Poppins", sans-serif;
-  padding: .3rem;
+  padding: .5rem;
   margin-bottom: 7px;
   font-size: .9rem;
   letter-spacing: .675px;
@@ -119,49 +123,53 @@ li i {
   border: none;
   background-color: transparent;
   border-bottom: 2px solid #eee;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out;
 }
 
 .modal input:focus {
   outline: none;
-  border-bottom: 2px solid #6633df;
-  transition: all 0.5s ease;
+  border-bottom: 2px solid #5f42e0;
+  transition: all 0.4s ease-in-out;
 }
 
 .modal #add {
   font-family: "Poppins", sans-serif;
+  font-size: .9rem;
   border: none;
   border-radius: 3px;
-  background-color: #6633df;
+  background-color: #5f42e0;
   color: #f8f8f8;
-  padding: .4rem .6rem;
+  padding: .6rem 1.1rem;
   margin-left: .3rem;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out;
 }
 
 .modal #add:hover {
-  background-color: #5520cf;
-  transition: all 0.5s ease;
+  background-color: #562abe;
+  transition: all 0.4s ease-in-out;
 }
 
 @media screen and (max-width: 640px) {
   .container {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 3rem;
   }
   .box {
     width: 100%;
   }
   .modal {
     width: 85%;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .modal #add {
     margin-top: .5rem;
+  }
+  .modal input {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

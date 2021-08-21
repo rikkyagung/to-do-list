@@ -17,13 +17,15 @@
         <div class="box">
             <h1>To Do List</h1>
             <ul></ul>
-            <button id="modal_trigger"><i class="fas fa-plus fa-lg"></i></button>
+            <div class="wrap">
+                <button id="modal_trigger"><i class="fas fa-plus fa-lg"></i></button>
+            </div>
         </div>
 
         <div class="modal">
             <button id="close"><i class="fas fa-times"></i></button>
-            <h2>Add List</h2>
-            <input type="text" placeholder="Type your list" autocomplete="off">
+            <h2>Add Task</h2>
+            <input type="text" placeholder="Type your task" autocomplete="off">
             <button id="add">Add</button>
         </div>
     </div>
@@ -36,6 +38,8 @@
         const tambah = document.getElementById('add');
         const input = document.querySelector('input');
         const hasil = document.querySelector('ul');
+
+        // Method 1
 
         modalTrigger.addEventListener('click', function () {
             setTimeout(() => {
